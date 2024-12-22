@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d8e1a0;
     color: #333;
     margin: 20px;
 }
@@ -11,4 +11,31 @@ h1 {
 
 p {
     font-size: 1.2em;
+}
+nav {
+    background-color: #d81f1f; /* Bakgrundsfärg på menyn */
+    padding: 15px;
+    border-radius: 15px;
+}
+
+nav ul {
+    list-style: none; /* Tar bort punktlistan */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Gör att kategorierna ligger i rad */
+    justify-content: center; /* Centrera kategorierna */
+}
+
+nav ul li {
+    margin: 0 15px; /* Mellanrum mellan kategorierna */
+}
+
+nav ul li a {
+    text-decoration: none; /* Tar bort understrykning */
+    color: #d8e1a0; /* Länkfärg */
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Understrykning vid hover */
 }
