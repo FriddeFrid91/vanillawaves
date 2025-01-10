@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <img src="Logo.png" alt="Image of the logo">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanilla Waves</title>
+    <title>Vanilla Waves - Home</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .center {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="#products">HOME</a></li>
-            <li><a href="video.html">VIDEO</a></li>
-            <li><a href="#support">MUSIC</a></li>
-            <li><a href="#support">CONTACT</a></li>
-            <li><a href="#support">SOCIAL</a></li>
-            <li><a href="#support">BANDCAMP</a></li>
-            <li><a href="#support">MERCH</a></li>
-        
-        </ul>
+        <div class="menu-container">
+            <a href="index.html" class="logo">
+                <img src="Logo.png" alt="Vanilla Waves Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="https://bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a></li>
+                <li><a href="#merch">Merch</a></li>
+            </ul>
+        </div>
     </nav>
-  <h1>Vanilla Waves</h1>
-  <footer>
-    <p>Contact us <a href="mailto:info@dittforetag.se">info@dittforetag.se</a></p>
-</footer>
-</body>
 
+    <!-- Main Content -->
+    <main>
+        <section id="about">
+            <h1>About Vanilla Waves</h1>
+            <p>Vanilla Waves is a band bringing smooth sounds and unforgettable melodies. Join us on our musical journey!</p>
+            <img src="BandPic.jpg" alt="Band picture of Vanilla Waves">
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact us at <a href="mailto:booking.vanillawaves@gmail.com">booking.vanillawaves@gmail.com</a></p>
+        <p>Follow us on <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> and <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
+    </footer>
+</body>
 </html>
+
+
+
 

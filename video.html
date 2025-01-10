@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Sida</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #d8e1a0;
-            color: #333;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #007acc;
-        }
-
-        iframe {
-            display: block;
-            margin: 20px auto; /* Centrera videorna */
-        }
-    </style>
+    <title>Vanilla Waves - Videos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Välkommen till Videosidan</h1>
-    <p>Här kan du lägga till en video eller annan information relaterad till video.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-container"></div>
+        <a href="index.html" class="logo">
+            <img src="Logo.png" alt="Vanilla Waves Logo">
+        </a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#social">Social</a></li>
+            <li><a href="https://bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a></li>
+            <li><a href="#merch">Merch</a></li>
+        </ul>
+    </div>
+    </nav>
 
-    <!-- Första inbäddade videon -->
-    <iframe width="600" height="338" 
-        src="https://www.youtube.com/embed/PYby2mIb3mY" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
+    <!-- Logo -->
+    <img src="Logo.png" alt="Vanilla Waves Logo" class="logo">
 
-    <!-- Andra inbäddade videon -->
-    <iframe width="600" height="338" 
-        src="https://www.youtube.com/embed/fbb_eEhWJOk" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2>VIDEOS</h2>
+        <div class="videos-container">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/PYby2mIb3mY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/fbb_eEhWJOk" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact us at <a href="mailto:booking.vanillawaves@gmail.com">booking.vanillawaves@gmail.com</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navList = document.querySelector('.nav-list');
+    
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                // Uppdatera aria-expanded för tillgänglighet
+                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                hamburger.setAttribute('aria-expanded', !isExpanded);
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
 

@@ -1,41 +1,185 @@
+/* General styles */
+:root {
+    --primary-color: #d92424;
+    --secondary-color: #ece8e4;
+    --text-color: black;
+    --hover-color: red;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #d8e1a0;
-    color: #333;
-    margin: 20px;
-}
-
-h1 {
-    color: #007acc;
-}
-
-p {
-    font-size: 1.2em;
-}
-nav {
-    background-color: #d81f1f; /* Bakgrundsfärg på menyn */
-    padding: 15px;
-    border-radius: 15px;
-}
-
-nav ul {
-    list-style: none; /* Tar bort punktlistan */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Gör att kategorierna ligger i rad */
-    justify-content: center; /* Centrera kategorierna */
+    background-image: url('background1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 80px; /* To prevent content from overlapping with the fixed navbar */
 }
 
-nav ul li {
-    margin: 0 15px; /* Mellanrum mellan kategorierna */
+/* Videos container */
+.videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-nav ul li a {
-    text-decoration: none; /* Tar bort understrykning */
-    color: #d8e1a0; /* Länkfärg */
-    font-size: 1.2em;
+.videos-container iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9; /* Responsive aspect ratio */
+    border: none;
 }
 
-nav ul li a:hover {
-    text-decoration: underline; /* Understrykning vid hover */
+/* Spotify container */
+.spotify-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.spotify-container iframe {
+    width: 300px;
+    height: 380px;
+    border-radius: 12px;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .spotify-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .spotify-container iframe {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Navbar styles */
+nav {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 10px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* Logo styles */
+.logo {
+    display: block;
+    margin: 100px auto 20px;
+    width: 600px;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Footer styles */
+footer {
+    color: var(--text-color);
+    padding: 1em;
+    text-align: center;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* Hamburgermeny */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 100px;
+    }
 }
