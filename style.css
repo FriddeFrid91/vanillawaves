@@ -18,6 +18,37 @@ body {
     margin-top: 80px; /* To prevent content from overlapping with the fixed navbar */
 }
 
+html {
+    overflow-y: scroll; /* Tvingar fram en scrollbar på alla sidor */
+}
+
+/* Allmänna länkar i Social-sektionen */
+.social-container ul {
+    list-style: none; /* Ta bort punkter bredvid listan */
+    padding: 0;
+    margin: 0;
+}
+
+.social-container ul li {
+    margin: 0.5em 0; /* Lägger till mellanrum mellan objekten */
+}
+
+.social-container ul li a {
+    text-decoration: none; /* Ta bort understrykning */
+    font-size: 1.2em; /* Gör texten större */
+    font-weight: bold; /* Gör texten fetare */
+    color: #d92424; /* Anpassa till din primära färg */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smidig övergång */
+}
+
+/* Hover-effekt för länkar */
+.social-container ul li a:hover {
+    color: #ff4d4d; /* En ljusare nyans för hovring */
+    transform: scale(1.1); /* Ökar storleken lite vid hovring */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtil skuggeffekt */
+}
+
+
 /* Videos container */
 .videos-container {
     display: flex;
@@ -44,6 +75,22 @@ body {
 }
 
 .spotify-container iframe {
+    width: 300px;
+    height: 380px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* Social container */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.social-container iframe {
     width: 300px;
     height: 380px;
     border-radius: 12px;
@@ -103,9 +150,21 @@ nav {
 .logo {
     display: block;
     margin: 100px auto 20px;
-    width: 600px;
+    width: 400px;
     height: auto;
 }
+/* Logo Container */
+.logo-container {
+    text-align: center; /* Centrera logotypen */
+    margin: 1em 0; /* Skapa mellanrum ovanför och under logotypen */
+}
+
+.logo-container img {
+    max-width: 700px; /* Begränsa logons bredd */
+    height: auto; /* Bevara proportionerna */
+    margin: 0 auto;
+}
+
 
 img {
     max-width: 100%;
@@ -154,11 +213,18 @@ footer a:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .nav-list li {
+        margin: 0.5em 0; /* Större vertikalt mellanrum för mobiler */
+        padding-left: 1em;
+    }
+    .logo-container img {
+        max-width: 300px; /* Anpassa till mindre skärmar */
+    }
     .nav-list {
         display: none;
         flex-direction: column;
         width: 100%;
-        text-align: center;
+        text-align: left;
         background-color: var(--primary-color);
         position: absolute;
         top: 100%;
@@ -175,6 +241,7 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+    
     .nav-list {
         font-size: 0.9em;
     }

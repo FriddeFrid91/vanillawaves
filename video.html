@@ -3,70 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanilla Waves - Videos</title>
+    <title>Vanilla Waves - Music</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="menu-container"></div>
-        <a href="index.html" class="logo">
-            <img src="Logo.png" alt="Vanilla Waves Logo">
-        </a>
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="video.html">Video</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#social">Social</a></li>
-            <li><a href="https://bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a></li>
-            <li><a href="#merch">Merch</a></li>
-        </ul>
-    </div>
-    </nav>
-
-    <!-- Logo -->
-    <img src="Logo.png" alt="Vanilla Waves Logo" class="logo">
-
-    <!-- Videos Section -->
-    <section id="videos">
-        <h2>VIDEOS</h2>
-        <div class="videos-container">
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/PYby2mIb3mY" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/fbb_eEhWJOk" frameborder="0" allowfullscreen></iframe>
-            </div>
+        <div class="menu-container">
+           
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="social.html">Social</a></li>
+                <li><a href="#merch">Merch</a></li>
+            </ul>
         </div>
+    </nav>
+    <div class="logo-container">
+        <a href="#"><img src="logo.png" alt="Band Logo"></a>
+    </div>
+    <script src="script.js"></script>
+       
+        <section id="videos">
+            <div class="videos-container">
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/PYby2mIb3mY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/fbb_eEhWJOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>Contact us at <a href="mailto:booking.vanillawaves@gmail.com">booking.vanillawaves@gmail.com</a></p>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navList = document.querySelector('.nav-list');
-    
-            hamburger.addEventListener('click', () => {
-                navList.classList.toggle('active');
-                // Uppdatera aria-expanded för tillgänglighet
-                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-                hamburger.setAttribute('aria-expanded', !isExpanded);
-            });
-        });
-    </script>
 </body>
 </html>
+
 
 
 
