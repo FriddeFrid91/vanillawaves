@@ -1,6 +1,6 @@
 /* General styles */
 :root {
-    --primary-color: rgb(49, 169, 209);
+    --primary-color: rgb(31, 165, 202);
     --secondary-color: #ece8e4;
     --text-color: black;
     --hover-color: red;
@@ -204,7 +204,9 @@ nav {
 /* Logo Container */
 .logo-container {
     text-align: center; /* Centrera logotypen */
-    margin: 1em 0; /* Skapa mellanrum ovanför och under logotypen */
+    margin: 2em 0; /* Skapa mellanrum ovanför och under logotypen */
+    padding-top: 3em; /* Lägger till avstånd mellan logotypen och menyn */
+
 }
 
 .logo-container img {
