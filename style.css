@@ -10,13 +10,51 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('background1.jpg');
+    background-image: url('background2.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 80px; /* To prevent content from overlapping with the fixed navbar */
 }
+
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Förhindra rullning */
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Anpassar till container eller skärm */
+    max-width: 1200px; /* Begränsar bredden */
+    margin: 0 auto; /* Centrerar om det är en mindre bredd */
+    overflow: hidden;
+}
+
+video {
+    width: 100%; /* Gör att videon anpassar sig till container */
+    height: auto; /* Behåller proportionerna */
+}
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; /* Se till att texten visas ovanför videon */
+}
+
+video::cue {
+    z-index: -1; /* Se till att videon ligger bakom innehållet */
+}
+
 
 html {
     overflow-y: scroll; /* Tvingar fram en scrollbar på alla sidor */
