@@ -1,6 +1,6 @@
 /* General styles */
 :root {
-    --primary-color: #d92424;
+    --primary-color: rgb(49, 169, 209);
     --secondary-color: #ece8e4;
     --text-color: black;
     --hover-color: red;
@@ -29,15 +29,15 @@ body, html {
 
 .video-container {
     position: relative;
-    width: 100%; /* Anpassar till container eller skärm */
-    max-width: 1200px; /* Begränsar bredden */
-    margin: 0 auto; /* Centrerar om det är en mindre bredd */
+    width: 100%; /* Anpassar till hela sidans bredd */
+    height: 50vh; /* Videon tar upp halva höjden av skärmen */
     overflow: hidden;
 }
 
 video {
-    width: 100%; /* Gör att videon anpassar sig till container */
-    height: auto; /* Behåller proportionerna */
+    width: 100%; /* Videon fyller bredden */
+    height: 100%; /* Videon fyller höjden inom sin container */
+    object-fit: cover; /* Videon beskärs för att fylla containern */
 }
 
 
@@ -60,30 +60,40 @@ html {
     overflow-y: scroll; /* Tvingar fram en scrollbar på alla sidor */
 }
 
-/* Allmänna länkar i Social-sektionen */
+/* För social-container-länkar */
+.social-container ul li a {
+    display: inline-block; /* Gör länken till en knapp */
+    text-decoration: none; /* Ta bort understrykning */
+    font-size: 1.2em; /* Gör texten större */
+    font-weight: bold; /* Fet text */
+    color: white; /* Primär färg för text */
+    background-color: var(--primary-color); /* Bakgrundsfärg för knapparna */
+    padding: 10px 20px; /* Lägg till inre avstånd */
+    border: 2px solid var(--primary-color); /* Ram med primär färg */
+    border-radius: 8px; /* Rundade hörn */
+    transition: all 0.3s ease; /* Smidig övergång för hover-effekter */
+}
+
+/* Hover-effekt för social-länkar */
+.social-container ul li a:hover {
+    background-color: var(--primary-color); /* Ändra bakgrundsfärg vid hovring */
+    color: red; /* Ändra textfärg vid hovring */
+    transform: scale(1.1); /* Gör knappen lite större vid hovring */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till en skugga för djupkänsla */
+}
+/* Social Container Styles */
 .social-container ul {
     list-style: none; /* Ta bort punkter bredvid listan */
     padding: 0;
-    margin: 0;
+    margin: 0 auto; /* Centrera listan */
+    display: flex; /* Gör det flexibelt */
+    flex-wrap: wrap; /* Tillåt knappar att brytas till nästa rad vid små skärmar */
+    gap: 15px; /* Avstånd mellan knapparna */
+    justify-content: center; /* Centrera knapparna horisontellt */
 }
 
 .social-container ul li {
-    margin: 0.5em 0; /* Lägger till mellanrum mellan objekten */
-}
-
-.social-container ul li a {
-    text-decoration: none; /* Ta bort understrykning */
-    font-size: 1.2em; /* Gör texten större */
-    font-weight: bold; /* Gör texten fetare */
-    color: #d92424; /* Anpassa till din primära färg */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smidig övergång */
-}
-
-/* Hover-effekt för länkar */
-.social-container ul li a:hover {
-    color: #ff4d4d; /* En ljusare nyans för hovring */
-    transform: scale(1.1); /* Ökar storleken lite vid hovring */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtil skuggeffekt */
+    margin: 0; /* Ta bort extra marginal */
 }
 
 
