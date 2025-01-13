@@ -208,8 +208,8 @@ iframe {
 /* Responsive Design */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     body {
-        background: rgb(132, 183, 224);
-        background-size: cover;
+        background: rgb(163, 214, 228);
+        background-size: auto;
     }
 @media (max-width: 1024px) {
     .video-container {
@@ -281,7 +281,7 @@ iframe {
     .nav-list {
         display: none;
         flex-direction: column;
-        background-color: rgb(202, 31, 156);
+        background-color: rgb(117, 211, 232);
         position: absolute;
         top: 100%;
         left: 0;
