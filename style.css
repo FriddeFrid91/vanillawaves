@@ -12,9 +12,9 @@
 
 body {
     background: url(background6.jpg) no-repeat center center fixed;
+
     background-size: cover;
     font-family: 'Roboto', Arial, sans-serif;
-
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -206,6 +206,11 @@ iframe {
 }
 
 /* Responsive Design */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        background: url(Background3@2x.jpg) no-repeat center center;
+        background-size: cover;
+    }
 @media (max-width: 1024px) {
     .video-container {
         max-width: 500px; /* Minska storleken på videon */
