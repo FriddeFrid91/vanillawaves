@@ -208,7 +208,7 @@ iframe {
 /* Responsive Design */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     body {
-        background: url(Background3@2x.jpg) no-repeat center center;
+        background: url(background6.jpg) no-repeat center center;
         background-size: cover;
     }
 @media (max-width: 1024px) {
