@@ -1,9 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
 
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', () => {
         navList.classList.toggle('active');
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
     });
 });
 
