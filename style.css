@@ -6,12 +6,12 @@
 }
 .brand-text {
     font-family: 'Agbalumo', Arial, sans-serif;
-    font-size: 2rem; /* Justera storlek vid behov */
+    font-size: 2rem;
 }
 
 
 body {
-    background: url(background6.jpg) no-repeat center center fixed;
+    background: url(background7.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
@@ -36,28 +36,25 @@ p {
 
 /* Video Container */
 .video-container {
-    display: flex;
-    justify-content: center; /* Centrera videon */
-    margin: 1.5rem auto; /* Avstånd ovanför och under */
-    width: 90%; /* Gör videon responsiv */
-    max-width: 800px; /* Begränsa videons maxbredd */
-    border-radius: 50px; /* Lägg till rundade hörn */
-    overflow: hidden; /* Klipp bort överflöd */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Lägg till skugga */
+    width: 100%; /* Gör videon fullbredd inom sin container */
+    max-width: 550px; /* Sätt en maxstorlek för större skärmar */
+    margin: 1rem auto; /* Centrerar videon */
+    border-radius: 20px; /* Lägg till rundade hörn */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Lägg till en skugga */
 }
+
 
 video, iframe {
     width: 100%; /* Videon fyller containerns bredd */
     height: auto; /* Bevara proportionerna */
     display: block; /* Ta bort mellanrum */
-    border-radius: 50px; /* Rundade hörn för själva videon */
+    border-radius: 30px; /* Rundade hörn för själva videon */
 }
-
-
 /* Logo */
 .logo-container {
     text-align: center;
-    margin: 0.5rem 0;
+    margin: 0rem 0;
     padding-top: 0;
 }
 
@@ -74,7 +71,8 @@ footer {
     background-color: rgb(31, 165, 202);
     color: #fff;
     text-align: center;
-    padding: 1rem;
+    padding: 0rem;
+    padding-top: 22px;
     margin-top: auto;
 }
 
@@ -94,8 +92,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
+    
 }
 
 .brand-text {
@@ -201,16 +200,17 @@ iframe {
 }
 
 .social-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 /* Responsive Design */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     body {
-        background: rgb(163, 214, 228);
-        background-size: auto;
+        background: url(background7.jpg);
+        background-size: fixed;
     }
-@media (max-width: 1024px) {
+
+@media (max-width: 1280px) {
     .video-container {
         max-width: 500px; /* Minska storleken på videon */
     }
@@ -242,7 +242,7 @@ iframe {
 @media (max-width: 768px) {
     .video-container {
         padding-top: 0;
-        max-width: 300px;
+        max-width: 400px;
     }
     .hamburger {
         display: flex;
@@ -267,6 +267,35 @@ iframe {
         text-align: center;
         margin: 0.5rem 0;
     }
+}
+
+@media (max-width: 720px) {
+    .video-container {
+        max-width: 300px;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(117, 211, 232);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+}
 }
 
 @media (max-width: 480px) {
