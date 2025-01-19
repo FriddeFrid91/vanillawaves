@@ -77,7 +77,7 @@ html {
 /* Hover-effekt för social-länkar */
 .social-container ul li a:hover {
     background-color: var(--primary-color); /* Ändra bakgrundsfärg vid hovring */
-    color: red; /* Ändra textfärg vid hovring */
+    color: rgb(88, 75, 75); /* Ändra textfärg vid hovring */
     transform: scale(1.1); /* Gör knappen lite större vid hovring */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till en skugga för djupkänsla */
 }
