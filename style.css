@@ -1,302 +1,330 @@
-/* General styles */
-:root {
-    --primary-color: rgb(31, 165, 202);
-    --secondary-color: #ece8e4;
-    --text-color: black;
-    --hover-color: red;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+.brand-text {
+    font-family: 'Agbalumo', Arial, sans-serif;
+    font-size: 2rem;
+}
+
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('background2.jpg');
+    background: url(background7.jpg) no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 80px; /* To prevent content from overlapping with the fixed navbar */
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    image-rendering: crisp-edges;
 }
 
-/* styles.css */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* Förhindra rullning */
-}
-
-.video-container {
-    position: relative;
-    width: 100%; /* Anpassar till hela sidans bredd */
-    height: 50vh; /* Videon tar upp halva höjden av skärmen */
-    overflow: hidden;
-}
-
-video {
-    width: 100%; /* Videon fyller bredden */
-    height: 100%; /* Videon fyller höjden inom sin container */
-    object-fit: cover; /* Videon beskärs för att fylla containern */
-}
-
-
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+h1, h2 {
+    font-family: 'Agbalumo', Arial, sans-serif;
     text-align: center;
-    z-index: 1; /* Se till att texten visas ovanför videon */
+    margin-bottom: 1rem;
 }
 
-video::cue {
-    z-index: -1; /* Se till att videon ligger bakom innehållet */
+p {
+    font-family: 'Roboto', Arial, sans-serif;
+
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-
-html {
-    overflow-y: scroll; /* Tvingar fram en scrollbar på alla sidor */
-}
-
-/* För social-container-länkar */
-.social-container ul li a {
-    display: inline-block; /* Gör länken till en knapp */
-    text-decoration: none; /* Ta bort understrykning */
-    font-size: 1.2em; /* Gör texten större */
-    font-weight: bold; /* Fet text */
-    color: white; /* Primär färg för text */
-    background-color: var(--primary-color); /* Bakgrundsfärg för knapparna */
-    padding: 10px 20px; /* Lägg till inre avstånd */
-    border: 2px solid var(--primary-color); /* Ram med primär färg */
-    border-radius: 8px; /* Rundade hörn */
-    transition: all 0.3s ease; /* Smidig övergång för hover-effekter */
-}
-
-/* Hover-effekt för social-länkar */
-.social-container ul li a:hover {
-    background-color: var(--primary-color); /* Ändra bakgrundsfärg vid hovring */
-    color: rgb(88, 75, 75); /* Ändra textfärg vid hovring */
-    transform: scale(1.1); /* Gör knappen lite större vid hovring */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till en skugga för djupkänsla */
-}
-/* Social Container Styles */
-.social-container ul {
-    list-style: none; /* Ta bort punkter bredvid listan */
-    padding: 0;
-    margin: 0 auto; /* Centrera listan */
-    display: flex; /* Gör det flexibelt */
-    flex-wrap: wrap; /* Tillåt knappar att brytas till nästa rad vid små skärmar */
-    gap: 15px; /* Avstånd mellan knapparna */
-    justify-content: center; /* Centrera knapparna horisontellt */
-}
-
-.social-container ul li {
-    margin: 0; /* Ta bort extra marginal */
+/* Video Container */
+.video-container {
+    width: 100%; /* Gör videon fullbredd inom sin container */
+    max-width: 550px; /* Sätt en maxstorlek för större skärmar */
+    margin: 1rem auto; /* Centrerar videon */
+    border-radius: 20px; /* Lägg till rundade hörn */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Lägg till en skugga */
 }
 
 
-/* Videos container */
-.videos-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.videos-container iframe {
-    width: 100%;
-    max-width: 560px;
-    aspect-ratio: 16 / 9; /* Responsive aspect ratio */
-    border: none;
-}
-
-/* Spotify container */
-.spotify-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.spotify-container iframe {
-    width: 300px;
-    height: 380px;
-    border-radius: 12px;
-    border: none;
-}
-
-/* Social container */
-.social-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.social-container iframe {
-    width: 300px;
-    height: 380px;
-    border-radius: 12px;
-    border: none;
-}
-
-@media (max-width: 600px) {
-    .spotify-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .spotify-container iframe {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* Navbar styles */
-nav {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5em 1em;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-list {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list li {
-    margin: 0 10px;
-}
-
-.nav-list li a {
-    text-decoration: none;
-    color: var(--secondary-color);
-    font-weight: bold;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-.nav-list li a:hover {
-    color: var(--hover-color);
-    text-decoration: underline;
-}
-
-/* Logo styles */
-.logo {
-    display: block;
-    margin: 100px auto 20px;
-    width: 400px;
-    height: auto;
-}
-/* Logo Container */
-.logo-container {
-    text-align: center; /* Centrera logotypen */
-    margin: 2em 0; /* Skapa mellanrum ovanför och under logotypen */
-    padding-top: 3em; /* Lägger till avstånd mellan logotypen och menyn */
-
-}
-
-.logo-container img {
-    max-width: 700px; /* Begränsa logons bredd */
+video, iframe {
+    width: 100%; /* Videon fyller containerns bredd */
     height: auto; /* Bevara proportionerna */
+    display: block; /* Ta bort mellanrum */
+    border-radius: 30px; /* Rundade hörn för själva videon */
+}
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin: 0rem 0;
+    padding-top: 0;
+}
+
+.logo {
+    width: 50%; /* Logotypen är 50% av skärmens bredd */
+    max-width: 500px; /* Sätt en maximal bredd för stora skärmar */
+    height: auto;
     margin: 0 auto;
 }
 
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-}
-
-/* Footer styles */
+/* Footer */
 footer {
-    color: var(--text-color);
-    padding: 1em;
+    background-color: rgb(31, 165, 202);
+    color: #fff;
     text-align: center;
+    padding: 0rem;
+    padding-top: 22px;
+    margin-top: auto;
 }
 
-footer a {
-    color: var(--text-color);
+/* Navigation */
+nav {
+    background: linear-gradient(90deg, rgb(31, 165, 202), rgb(45, 85, 255));
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
     text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: var(--hover-color);
-    text-decoration: underline;
+.nav-list li a:hover {
+    color: #ff6347;
 }
 
-/* Hamburgermeny */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 21px;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
 }
 
 .hamburger .bar {
     width: 100%;
     height: 3px;
-    background-color: var(--secondary-color);
+    background-color: #fff;
     border-radius: 2px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .nav-list li {
-        margin: 0.5em 0; /* Större vertikalt mellanrum för mobiler */
-        padding-left: 1em;
+/* Content Sections */
+.content {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+/* Video and Spotify Containers */
+.videos-container, .spotify-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+/* Social Buttons */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.social-btn {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.25rem 1.2rem;
+    border-radius: 250px;
+    transition: all 0.3s ease;
+}
+
+/* Specific Styles for Social Buttons */
+.spotify {
+    background-color: #1DB954;
+    color: #fff;
+}
+
+.youtube {
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+}
+
+.tiktok {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #EE1D52;
+}
+
+.social-btn:hover {
+    transform: scale(1.07);
+}
+
+/* Responsive Design */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        background: url(background7.jpg);
+        background-size: fixed;
     }
-    .logo-container img {
-        max-width: 300px; /* Anpassa till mindre skärmar */
+
+@media (max-width: 1280px) {
+    .video-container {
+        max-width: 500px; /* Minska storleken på videon */
     }
+    .hamburger {
+        display: flex;
+    }
+
     .nav-list {
         display: none;
         flex-direction: column;
-        width: 100%;
-        text-align: left;
-        background-color: var(--primary-color);
+        background-color: rgb(31, 165, 202);
         position: absolute;
         top: 100%;
         left: 0;
+        width: 100%;
+        padding: 1rem 0;
     }
 
     .nav-list.active {
         display: flex;
     }
 
+    .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+
+   
+}
+@media (max-width: 768px) {
+    .video-container {
+        padding-top: 0;
+        max-width: 400px;
+    }
     .hamburger {
         display: flex;
     }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(31, 165, 202);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .video-container {
+        max-width: 300px;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(117, 211, 232);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+}
 }
 
 @media (max-width: 480px) {
-    
-    .nav-list {
-        font-size: 0.9em;
+    .video-container {
+        max-width: 300px;
+    }
+    .hamburger {
+        display: flex;
     }
 
-    .logo {
-        width: 100px;
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(117, 211, 232);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
     }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+}
+}
+}
 }
